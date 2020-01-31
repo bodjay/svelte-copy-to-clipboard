@@ -34,8 +34,8 @@ yarn && yarn start
   }
 </script>
 
-<CopyToClipboard text={exampleText} onCopy={handleSuccessfullyCopied} onFail={handleFailedCopy}>
-    <button>An element to trigger the copy</button>
+<CopyToClipboard text={exampleText} onCopy={handleSuccessfullyCopied} onFail={handleFailedCopy} let:copy>
+    <button on:click={copy}>An element to trigger the copy</button>
 </CopyToClipboard>
 ```
 
