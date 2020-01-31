@@ -1,6 +1,4 @@
 <script>
-  import { onDestroy } from "svelte";
-
   export let text;
   export let onCopy;
   export let onFail;
