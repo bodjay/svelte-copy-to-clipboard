@@ -25,7 +25,9 @@
       placeholder="Redirect URI"
       on:change={e => (exampleText = e.target.value)} />
     <br />
-    <CopyToClipboard />
+    <CopyToClipboard let:copy>
+      <button on:click={copy}>Click to copy to clipboard</button>
+    </CopyToClipboard>
   </div>
   <textarea placeholder="Paste your awesome text here" />
 </main>
