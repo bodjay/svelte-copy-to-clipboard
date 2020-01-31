@@ -10,8 +10,6 @@ npm i svelte-copy-to-clipboard
 yarn add svelte-copy-to-clipboard
 ```
 
-## Demo [Link](https://svelte-copy-to-clipboard.netlify.com/)
-
 Local demo:
 
 ```
