@@ -1,7 +1,7 @@
 <script>
   import CopyToClipboard from "svelte-copy-to-clipboard";
 
-  let exampleText;
+  let exampleText = "";
 </script>
 
 <style>
@@ -25,7 +25,9 @@
       placeholder="Redirect URI"
       on:change={e => (exampleText = e.target.value)} />
     <br />
-    <CopyToClipboard />
+    <CopyToClipboard text={exampleText} let:copy>
+      <button on:click={copy}>Click to copy to clipboard</button>
+    </CopyToClipboard>
   </div>
   <textarea placeholder="Paste your awesome text here" />
 </main>
