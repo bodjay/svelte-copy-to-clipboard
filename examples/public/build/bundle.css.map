@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "../../App.svelte"
+  ],
+  "sourcesContent": [
+    "<script>\n  import CopyToClipboard from \"svelte-copy-to-clipboard\";\n\n  let exampleText;\n</script>\n\n<style>\n  main {\n    display: flex;\n    width: 100%;\n    height: 100%;\n    align-items: center;\n    justify-content: center;\n    flex-direction: column;\n  }\n</style>\n\n<main>\n  <h1>Svelte Copy to Clipboard</h1>\n  <div class=\"input-form\">\n    <input\n      id=\"exampleText\"\n      type=\"text\"\n      value={exampleText}\n      placeholder=\"Redirect URI\"\n      on:change={e => (exampleText = e.target.value)} />\n    <br />\n    <CopyToClipboard />\n  </div>\n  <textarea placeholder=\"Paste your awesome text here\" />\n</main>\n"
+  ],
+  "names": [],
+  "mappings": "AAOE,IAAI,eAAC,CAAC,AACJ,OAAO,CAAE,IAAI,CACb,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,CACZ,WAAW,CAAE,MAAM,CACnB,eAAe,CAAE,MAAM,CACvB,cAAc,CAAE,MAAM,AACxB,CAAC"
+}

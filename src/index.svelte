@@ -5,18 +5,7 @@
   export let onCopy;
   export let onFail;
 
-  let element;
-  let component;
-
-  $: {
-    if (component) {
-      element = component.firstChild ? component.firstChild : component;
-
-      element.addEventListener("click", handleClick);
-    }
-  }
-
-  const handleClick = () => {
+  const copy = () => {
     navigator.clipboard.writeText(text).then(
       () => {
         if (onCopy) {
@@ -30,12 +19,6 @@
       }
     );
   };
-
-  onDestroy(() => {
-    element.removeEventListener("click", null);
-  });
 </script>
 
-<div bind:this={component}>
-  <slot />
-</div>
+<slot {copy} />

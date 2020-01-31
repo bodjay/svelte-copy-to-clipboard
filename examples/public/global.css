@@ -1,0 +1,68 @@
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #1565c0;
+}
+
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0.4em;
+  margin: 0 0 0.5em 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+}
+
+button {
+  color: #333;
+  background-color: #f4f4f4;
+  outline: none;
+}
+
+button:disabled {
+  color: #999;
+}
+
+button:not(:disabled):active {
+  background-color: #ddd;
+}
+
+button:focus {
+  border-color: #666;
+}
+
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
+@media (max-width: 500px) {
+  .github-corner:hover .octo-arm {
+    animation: none;
+  }
+  .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
+}
