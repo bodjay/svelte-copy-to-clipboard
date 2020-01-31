@@ -25,8 +25,8 @@ yarn && yarn start
   import CopyToClipboard from "svelte-copy-to-clipboard";
   let exampleText = 'Copy me!';
 
-  const handleSuccessfullyCopied = () => {
-      alert('successfully copied to clipboard!');
+  const handleSuccessfullyCopied = (e) => {
+      alert(`successfully copied to clipboard! ${e}`);
   }
 
   const handleFailedCopy = () => {
@@ -34,8 +34,8 @@ yarn && yarn start
   }
 </script>
 
-<CopyToClipboard text={exampleText} onCopy={handleSuccessfullyCopied} onFail={handleFailedCopy} let:copy>
-    <button on:click={copy}>An element to trigger the copy</button>
+<CopyToClipboard text={exampleText} on:copy={handleSuccessfullyCopied} on:fail={handleFailedCopy} let:onCopy>
+    <button on:click={onCopy}>An element to trigger the copy</button>
 </CopyToClipboard>
 ```
 
@@ -43,11 +43,17 @@ yarn && yarn start
 
 Component props:
 
-| Prop   | Type   | Description             |
-| ------ | ------ | ----------------------- |
-| text   | string | Value to copy           |
-| onCopy | func   | Call when text's copied |
-| onFail | func   | Call when copy fails    |
+| Prop | Type   | Description             |
+| ---- | ------ | ----------------------- |
+| text | string | Value to copy           |
+| copy | func   | Call when text's copied |
+| fail | func   | Call when copy fails    |
+
+## Slot Properties
+
+| Prop   | Type   | Description   |
+| ------ | ------ | ------------- |
+| onCopy | string | Call foi copy |
 
 ## NPM Statistics
 
