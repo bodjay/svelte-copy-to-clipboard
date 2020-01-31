@@ -1099,10 +1099,10 @@ supports-color@^6.1.0:
   dependencies:
     has-flag "^3.0.0"
 
-svelte-copy-to-clipboard@^0.1.0:
-  version "0.1.0"
-  resolved "https://artifactory.softplan.com.br/artifactory/api/npm/npm/svelte-copy-to-clipboard/-/svelte-copy-to-clipboard-0.1.0.tgz#62806d576bf3c915ad6702d849d6d4281aaf221b"
-  integrity sha1-YoBtV2vzyRWtZwLYSdbUKBqvIhs=
+svelte-copy-to-clipboard@^0.1.1:
+  version "0.1.1"
+  resolved "https://artifactory.softplan.com.br/artifactory/api/npm/npm/svelte-copy-to-clipboard/-/svelte-copy-to-clipboard-0.1.1.tgz#b716cc626d85300951ebdb208406ae9b4b86e9b7"
+  integrity sha1-txbMYm2FMAlR69sghAaum0uG6bc=
 
 svelte@^3.0.0:
   version "3.18.1"

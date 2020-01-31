@@ -17,6 +17,6 @@
   },
   "dependencies": {
     "sirv-cli": "^0.4.4",
-    "svelte-copy-to-clipboard": "^0.1.0"
+    "svelte-copy-to-clipboard": "^0.1.1"
   }
 }
