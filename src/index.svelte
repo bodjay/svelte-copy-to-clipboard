@@ -1,5 +1,4 @@
 <script>
-  import { onDestroy } from "svelte";
   import { createEventDispatcher } from "svelte";
 
   export let text;
