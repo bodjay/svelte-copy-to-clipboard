@@ -1099,10 +1099,10 @@ supports-color@^6.1.0:
   dependencies:
     has-flag "^3.0.0"
 
-svelte-copy-to-clipboard@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/svelte-copy-to-clipboard/-/svelte-copy-to-clipboard-0.1.1.tgz#b716cc626d85300951ebdb208406ae9b4b86e9b7"
-  integrity sha512-zO2ZNX3ketBAvvwS+wI+rXhHgNo8O9IHXA9n93esQl0hDIaAjxOEIkdP/Ol2PmbIFYKssrhJWRuO8EuN7i1Qjw==
+svelte-copy-to-clipboard@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/svelte-copy-to-clipboard/-/svelte-copy-to-clipboard-0.2.0.tgz#e0c52d17a69205788ca111cda8c276c669ff1d9a"
+  integrity sha512-VwU1cr1M31Tu7CZh6Un9KP45Bln9jVrMFvoeLm4T8ZhzU8ImR/QD87H5t/vQchTwa5OwIRhR9E5oO0EKzyJWkA==
 
 svelte@^3.0.0:
   version "3.18.1"

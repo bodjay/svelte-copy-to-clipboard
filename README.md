@@ -1,6 +1,4 @@
-# Svelte Copy to Clipboard
-
-A flexible copy to clipboard component for Svelte
+![Svelte Copy to Clipboard](./docs/header.png)
 
 ## Installation
 
@@ -9,6 +7,8 @@ npm i svelte-copy-to-clipboard
 // OR
 yarn add svelte-copy-to-clipboard
 ```
+
+[LIVE DEMO](https://svelte-copy-to-clipboard.netlify.com/)
 
 Local demo:
 
