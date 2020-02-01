@@ -5,11 +5,11 @@
 
   const dispatch = createEventDispatcher();
 
-  const onCopy = () => {
+  const copy = () => {
     navigator.clipboard
       .writeText(text)
       .then(() => dispatch("copy", text), e => dispatch("fail"));
   };
 </script>
 
-<slot {onCopy} />
+<slot {copy} />
