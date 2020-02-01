@@ -14,8 +14,8 @@ Local demo:
 
 ```
 git clone https://github.com/henriquecaraujo/svelte-copy-to-clipboard.git
-cd svelte-copy-to-clipboard/example
-yarn && yarn start
+cd svelte-copy-to-clipboard
+yarn && yarn dev
 ```
 
 ## Examples
@@ -63,4 +63,4 @@ Download stats for this NPM package
 
 ## License
 
-Svelte Infinite Scroll is open source software [licensed as MIT](https://github.com/henriquecaraujo/svelte-copy-to-clipboard/blob/master/LICENSE).
+Svelte Copy to Clipboard is open source software [licensed as MIT](https://github.com/henriquecaraujo/svelte-copy-to-clipboard/blob/master/LICENSE).
