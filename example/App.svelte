@@ -133,7 +133,7 @@
       text={tryText}
       let:copy>
       <div class="action">
-        <button id="copy-button" on:click={copy}>
+        <button id="try-copy-button" on:click={copy}>
           Click to copy above text to clipboard
         </button>
       </div>

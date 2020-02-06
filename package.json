@@ -13,11 +13,15 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "start": "sirv public"
+    "start": "sirv public",
+    "test": "jest src",
+    "e2e": "yarn dev -- --silent & cypress run"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.0",
     "@rollup/plugin-node-resolve": "^7.0.0",
+    "cypress": "^3.8.3",
+    "install": "^0.13.0",
     "rollup": "^1.20.0",
     "rollup-plugin-livereload": "^1.0.0",
     "rollup-plugin-svelte": "^5.0.3",
@@ -25,6 +29,15 @@
     "sirv-cli": "^0.4.4",
     "svelte": "^3.0.0",
     "svelte-copy-to-clipboard": "^0.2.0"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.svelte$": "svelte-jester"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "svelte"
+    ]
   },
   "bugs": {
     "url": "https://github.com/henriquecaraujo/svelte-copy-to-clipboard/issues"
