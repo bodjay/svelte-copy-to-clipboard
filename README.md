@@ -1,5 +1,7 @@
 ![Svelte Copy to Clipboard](./docs/header.png)
 
+[![npm version](https://badge.fury.io/js/svelte-copy-to-clipboard.svg)](https://badge.fury.io/js/svelte-copy-to-clipboard)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Build Status](https://travis-ci.com/henriquecaraujo/svelte-copy-to-clipboard.svg?branch=master)](https://travis-ci.com/henriquecaraujo/svelte-copy-to-clipboard)
 
 ## Installation
