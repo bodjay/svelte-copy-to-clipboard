@@ -17,7 +17,7 @@ install: yarn
 
 jobs:
   include:
-    - state: test
+    - stage: test
       script: yarn e2e
     - stage: npm release
       if: tag IS present
