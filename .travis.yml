@@ -1,12 +1,24 @@
 language: node_js
+
 node_js:
   - "8"
   - "10"
-cache: yarn
+
+addons:
+  apt:
+    packages:
+      - libgconf-2-4
+
+cache:
+  - ~/.yarn
+  - ~/.cache
 
 install: yarn
+
+before_script:
+  - yarn start -- --silent &
 script:
-  - echo "Not found tests"
+  - yarn e2e
 
 jobs:
   include:
