@@ -5,7 +5,7 @@ context("Copy and paste library test", () => {
     cy.visit("/");
   });
 
-  it(".should() - make an assertion about the current subject", () => {
+  it("should test all actions from example", () => {
     cy.get("#copy-anchor").click();
 
     cy.on("window:alert", str => {

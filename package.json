@@ -15,7 +15,7 @@
     "dev": "rollup -c -w",
     "start": "sirv public",
     "test": "jest src",
-    "e2e": "yarn start -- --silent & cypress run"
+    "e2e": "yarn dev -- --silent & cypress run"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.0",

@@ -1,4 +1,5 @@
 /node_modules/
+/cypress/videos/
 /public/build/
 /examples/node_modules/
 
