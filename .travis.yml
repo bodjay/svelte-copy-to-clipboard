@@ -17,8 +17,10 @@ install: yarn
 
 jobs:
   include:
-    - stage: e2e
-    - stage: npm release
+    - stage: "Tests"
+      name: "End to end tests"
+      script: yarn e2e
+    - stage: "Release"
       if: tag IS present
       node_js: "8"
       script: yarn build
