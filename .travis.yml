@@ -15,10 +15,8 @@ cache:
 
 install: yarn
 
-before_script:
-  - yarn start -- --silent &
 script:
-  - yarn e2e
+  - yarn start -- --silent & yarn e2e
 
 jobs:
   include:
