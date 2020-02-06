@@ -15,12 +15,12 @@ cache:
 
 install: yarn
 
+script:
+  - yarn e2e
+
 jobs:
   include:
-    - stage: "Tests"
-      name: "End to end tests"
-      script: yarn e2e
-    - stage: "Release"
+    - stage: npm release
       if: tag IS present
       node_js: "8"
       script: yarn build
