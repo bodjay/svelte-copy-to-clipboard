@@ -1,5 +1,7 @@
 ![Svelte Copy to Clipboard](./docs/header.png)
 
+[![Build Status](https://travis-ci.com/henriquecaraujo/svelte-copy-to-clipboard.svg?branch=master)](https://travis-ci.com/henriquecaraujo/svelte-copy-to-clipboard)
+
 ## Installation
 
 ```
