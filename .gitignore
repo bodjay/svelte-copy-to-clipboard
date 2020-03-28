@@ -3,4 +3,6 @@
 /public/build/
 /examples/node_modules/
 
+dist
+
 .DS_Store
