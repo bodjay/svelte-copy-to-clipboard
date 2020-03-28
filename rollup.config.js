@@ -39,7 +39,7 @@ export default [
   },
   {
     input: "src/CopyToClipboard.svelte",
-    output: { file: pkg.main, format: "umd", name: "Facebook Login" },
+    output: { file: pkg.main, format: "umd", name: "CopyToClipboard" },
     plugins: [svelte(), resolve(), commonjs()]
   },
   {
