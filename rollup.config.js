@@ -38,12 +38,12 @@ export default [
     }
   },
   {
-    input: "src/index.svelte",
+    input: "src/CopyToClipboard.svelte",
     output: { file: pkg.main, format: "umd", name: "Facebook Login" },
     plugins: [svelte(), resolve(), commonjs()]
   },
   {
-    input: "src/index.svelte",
+    input: "src/CopyToClipboard.svelte",
     output: { file: pkg.module, format: "es" },
     external: ["svelte/internal"],
     plugins: [svelte(), commonjs()]
