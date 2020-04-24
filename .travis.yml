@@ -19,7 +19,7 @@ script:
 
 jobs:
   include:
-    - stage: npm release
+    - stage: release
       if: tag IS present
       node_js: "10"
       script: yarn build
@@ -30,3 +30,8 @@ jobs:
         skip_cleanup: true
         on:
           tags: true
+    - state: build
+      node_js: "10"
+      script: yarn build
+      on:
+        master: true

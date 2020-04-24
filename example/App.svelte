@@ -123,7 +123,7 @@
     type="text"
     class="try-input"
     value={tryText}
-    on:change={e => (tryText = e.target.value)}
+    on:keyup={e => (tryText = e.target.value)}
     placeholder="Type something here then, click in one of actions below" />
   <div class="actions">
     <CopyToClipboard
@@ -131,7 +131,10 @@
       text={tryText}
       let:copy>
       <div class="action">
-        <button id="try-copy-button" on:click={copy}>
+        <button
+          disabled={tryText.length === 0}
+          id="try-copy-button"
+          on:click={copy}>
           Click to copy above text to clipboard
         </button>
       </div>

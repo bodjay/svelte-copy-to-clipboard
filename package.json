@@ -1,6 +1,6 @@
 {
   "name": "svelte-copy-to-clipboard",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Copy to clipboard component for Svelte",
   "author": "Henrique Araujo <henrique.004@hotmail.com> (https://henriquecaraujo.github.io/cv",
   "license": "MIT",
@@ -16,7 +16,6 @@
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public",
-    "test": "jest src",
     "e2e": "yarn dev -- --silent & cypress run"
   },
   "devDependencies": {
