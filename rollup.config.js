@@ -14,40 +14,50 @@ export default [
       sourcemap: true,
       format: "iife",
       name: "app",
-      file: "public/build/bundle.js"
+      file: "public/build/bundle.js",
     },
     plugins: [
       svelte({
         dev: !production,
-        css: css => {
+        css: (css) => {
           css.write("public/build/bundle.css");
-        }
+        },
       }),
       resolve({
         browser: true,
-        dedupe: importee =>
-          importee === "svelte" || importee.startsWith("svelte/")
+        dedupe: (importee) =>
+          importee === "svelte" || importee.startsWith("svelte/"),
       }),
       commonjs(),
       !production && serve(),
       !production && livereload("public"),
-      production && terser()
+      production && terser(),
     ],
     watch: {
-      clearScreen: false
-    }
+      clearScreen: false,
+    },
   },
   {
     input: "src/CopyToClipboard.svelte",
-    output: { file: pkg.main, format: "umd", name: "CopyToClipboard" },
-    plugins: [svelte(), resolve(), commonjs()]
-  },
-  {
-    input: "src/CopyToClipboard.svelte",
-    output: { file: pkg.module, format: "es" },
+    output: {
+      file: pkg.main,
+      format: "umd",
+      name: "CopyToClipboard",
+      globals: { svelte: "svelte", "svelte/internal": "svelte/internal" },
+    },
     external: ["svelte/internal"],
-    plugins: [svelte(), commonjs()]
-  }
+    plugins: [svelte(), resolve(), commonjs()],
+  },
+  {
+    input: "src/CopyToClipboard.svelte",
+    output: {
+      file: pkg.module,
+      format: "es",
+      globals: { svelte: "svelte", "svelte/internal": "svelte/internal" },
+    },
+    external: ["svelte/internal", "svelte"],
+    plugins: [svelte(), commonjs()],
+  },
 ];
 
 function serve() {
@@ -60,9 +70,9 @@ function serve() {
 
         require("child_process").spawn("npm", ["run", "start", "--", "--dev"], {
           stdio: ["ignore", "inherit", "inherit"],
-          shell: true
+          shell: true,
         });
       }
-    }
+    },
   };
 }
