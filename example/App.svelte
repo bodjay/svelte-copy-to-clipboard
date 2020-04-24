@@ -1,5 +1,5 @@
 <script>
-  import CopyToClipboard from "svelte-copy-to-clipboard";
+  import CopyToClipboard from "../src/CopyToClipboard.svelte";
 
   let exampleText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et libero in
     metus blandit malesuada vitae in dolor. Praesent mattis neque sapien, ut
@@ -75,8 +75,6 @@
 <main>
   <div class="title">Svelte Copy to Clipboard</div>
   <p class="description">A flexible copy to clipboard component for Svelte</p>
-  <!-- Place this tag where you want the button to render. -->
-  <!-- Place this tag where you want the button to render. -->
   <div class="github-buttons">
     <a
       class="github-button"
