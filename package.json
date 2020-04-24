@@ -1,6 +1,6 @@
 {
   "name": "svelte-copy-to-clipboard",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Copy to clipboard component for Svelte",
   "author": "Henrique Araujo <henrique.004@hotmail.com> (https://henriquecaraujo.github.io/cv",
   "license": "MIT",
