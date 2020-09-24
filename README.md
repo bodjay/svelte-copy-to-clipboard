@@ -12,6 +12,8 @@ npm i svelte-copy-to-clipboard
 yarn add svelte-copy-to-clipboard
 ```
 
+<em>Note: to use this library in sapper, install as devDependency. See the [link](https://github.com/sveltejs/sapper-template#using-external-components).</em>
+
 [LIVE DEMO](https://svelte-copy-to-clipboard.netlify.com/)
 
 Local demo:
