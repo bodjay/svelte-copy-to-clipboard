@@ -40,9 +40,10 @@ yarn && yarn dev
   }
 </script>
 
-<CopyToClipboard text={exampleText} on:copy={handleSuccessfullyCopied} on:fail={handleFailedCopy} let:onCopy>
-    <button on:click={onCopy}>An element to trigger the copy</button>
+<CopyToClipboard text={exampleText} on:copy={handleSuccessfullyCopied} on:fail={handleFailedCopy} let:copy>
+      <button on:click={copy}>An element to trigger the copy</button>
 </CopyToClipboard>
+
 ```
 
 ## Properties
