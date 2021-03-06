@@ -3,13 +3,16 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import livereload from "rollup-plugin-livereload";
 import { terser } from "rollup-plugin-terser";
+import typescript from "@rollup/plugin-typescript";
+import autoPreprocess from "svelte-preprocess";
+import svelteDts from "svelte-dts";
 import pkg from "./package.json";
 
 const production = !process.env.ROLLUP_WATCH;
 
 export default [
   {
-    input: "example/main.js",
+    input: "example/main.ts",
     output: {
       sourcemap: true,
       format: "iife",
@@ -19,10 +22,10 @@ export default [
     plugins: [
       svelte({
         dev: !production,
-        css: (css) => {
-          css.write("public/build/bundle.css");
-        },
+        css: (css) => css.write("public/build/bundle.css"),
+        preprocess: autoPreprocess(),
       }),
+      typescript({ sourceMap: !production }),
       resolve({
         browser: true,
         dedupe: (importee) =>
@@ -39,24 +42,24 @@ export default [
   },
   {
     input: "src/CopyToClipboard.svelte",
-    output: {
-      file: pkg.main,
-      format: "umd",
-      name: "CopyToClipboard",
-      globals: { svelte: "svelte", "svelte/internal": "svelte/internal" },
-    },
-    external: ["svelte/internal"],
-    plugins: [svelte(), resolve(), commonjs()],
+    output: { file: pkg.main, format: "umd", name: "CopyToClipboard" },
+    plugins: [
+      svelte({ preprocess: autoPreprocess() }),
+      typescript({ sourceMap: !production }),
+      resolve(),
+      commonjs(),
+    ],
   },
   {
     input: "src/CopyToClipboard.svelte",
-    output: {
-      file: pkg.module,
-      format: "es",
-      globals: { svelte: "svelte", "svelte/internal": "svelte/internal" },
-    },
-    external: ["svelte/internal", "svelte"],
-    plugins: [svelte(), commonjs()],
+    output: { file: pkg.module, format: "es" },
+    external: ["svelte/internal"],
+    plugins: [
+      svelteDts({ output: pkg.types }),
+      svelte({ preprocess: autoPreprocess() }),
+      typescript({ sourceMap: !production }),
+      commonjs(),
+    ],
   },
 ];
 
