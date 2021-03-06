@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import CopyToClipboard from "../src/CopyToClipboard.svelte";
 
   let exampleText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et libero in
@@ -16,6 +16,79 @@
 
   let tryText = "";
 </script>
+
+<main>
+  <div class="title">Svelte Copy to Clipboard</div>
+  <p class="description">A flexible copy to clipboard component for Svelte</p>
+  <div class="github-buttons">
+    <a
+      class="github-button"
+      href="https://github.com/henriquecaraujo/svelte-copy-to-clipboard"
+      data-icon="octicon-star"
+      data-size="large"
+      data-show-count="true"
+      aria-label="Star henriquecaraujo/svelte-copy-to-clipboard on GitHub"
+    >
+      Star
+    </a>
+    <a
+      class="github-button"
+      href="https://github.com/henriquecaraujo"
+      data-size="large"
+      data-show-count="true"
+      aria-label="Follow @henriquecaraujo on GitHub"
+    >
+      Follow @henriquecaraujo
+    </a>
+  </div>
+  <hr />
+  <h2>Example text for copy</h2>
+  <p class="example-text">"{exampleText}"</p>
+  <div class="actions">
+    <CopyToClipboard
+      on:copy={() => alert("successfully copied!")}
+      text={exampleText}
+      let:copy
+    >
+      <div class="action">
+        <a id="copy-anchor" href="#copy" on:click={copy}>
+          Click to copy above text to clipboard
+        </a>
+      </div>
+
+      <div class="action">
+        <button id="copy-button" on:click={copy}>
+          Click to copy above text to clipboard
+        </button>
+      </div>
+    </CopyToClipboard>
+  </div>
+  <hr />
+  <h3>Try you</h3>
+  <input
+    type="text"
+    class="try-input"
+    bind:value={tryText}
+    placeholder="Type something here then, click in one of actions below"
+  />
+  <div class="actions">
+    <CopyToClipboard
+      on:copy={() => alert("successfully copied!")}
+      text={tryText}
+      let:copy
+    >
+      <div class="action">
+        <button
+          disabled={tryText.length === 0}
+          id="try-copy-button"
+          on:click={copy}
+        >
+          Click to copy above text to clipboard
+        </button>
+      </div>
+    </CopyToClipboard>
+  </div>
+</main>
 
 <style>
   main {
@@ -71,73 +144,3 @@
     }
   }
 </style>
-
-<main>
-  <div class="title">Svelte Copy to Clipboard</div>
-  <p class="description">A flexible copy to clipboard component for Svelte</p>
-  <div class="github-buttons">
-    <a
-      class="github-button"
-      href="https://github.com/henriquecaraujo/svelte-copy-to-clipboard"
-      data-icon="octicon-star"
-      data-size="large"
-      data-show-count="true"
-      aria-label="Star henriquecaraujo/svelte-copy-to-clipboard on GitHub">
-      Star
-    </a>
-    <a
-      class="github-button"
-      href="https://github.com/henriquecaraujo"
-      data-size="large"
-      data-show-count="true"
-      aria-label="Follow @henriquecaraujo on GitHub">
-      Follow @henriquecaraujo
-    </a>
-  </div>
-  <hr />
-  <h2>Example text for copy</h2>
-  <p class="example-text">"{exampleText}"</p>
-  <div class="actions">
-    <CopyToClipboard
-      on:copy={() => alert('successfully copied!')}
-      text={exampleText}
-      let:copy>
-      <div class="action">
-        <a id="copy-anchor" href="#copy" on:click={copy}>
-          Click to copy above text to clipboard
-        </a>
-
-      </div>
-
-      <div class="action">
-
-        <button id="copy-button" on:click={copy}>
-          Click to copy above text to clipboard
-        </button>
-      </div>
-    </CopyToClipboard>
-  </div>
-  <hr />
-  <h3>Try you</h3>
-  <input
-    type="text"
-    class="try-input"
-    value={tryText}
-    on:keyup={e => (tryText = e.target.value)}
-    placeholder="Type something here then, click in one of actions below" />
-  <div class="actions">
-    <CopyToClipboard
-      on:copy={() => alert('successfully copied!')}
-      text={tryText}
-      let:copy>
-      <div class="action">
-        <button
-          disabled={tryText.length === 0}
-          id="try-copy-button"
-          on:click={copy}>
-          Click to copy above text to clipboard
-        </button>
-      </div>
-    </CopyToClipboard>
-  </div>
-</main>
